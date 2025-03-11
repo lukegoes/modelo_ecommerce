@@ -123,9 +123,13 @@ const SubscribeButton = styled(Button)({
   backgroundColor: "var(--accent)",
   color: "var(--text-light)",
   fontWeight: "bold",
-  borderRadius: 30,
+  borderRadius: 25,
   boxShadow: "0 4px 10px rgba(52, 152, 219, 0.3)",
   transition: "all 0.3s ease",
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
+
   "&:hover": {
     backgroundColor: "var(--accent-dark)",
     transform: "scale(1.1)",
@@ -168,7 +172,8 @@ export default function Newsletter() {
                   startAdornment: <MailOutlineIcon sx={{ color: "var(--accent)" }} />,
                 }}
               />
-              <SubscribeButton variant="contained" endIcon={<SendIcon />} disableElevation>
+             <SubscribeButton variant="contained" disableElevation>
+                <SendIcon sx={{ fontSize: 20, marginLeft: "5px" }} />
               </SubscribeButton>
             </InputContainer>
           </FormContainer>

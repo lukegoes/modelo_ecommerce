@@ -19,7 +19,7 @@ export default function Navbar() {
 
   const items: NavItemInterface[] = [
     {
-      url: "/placeholder",
+      url: "/placeholderlogin",
       label: "Fazer login",
       icon: <CgProfile />,
     },

@@ -78,7 +78,7 @@ const CategoryButton = styled(Button)({
   color: "var(--text-light)",
   alignSelf: "flex-start",
   borderRadius: 30,
-  padding: "8px 16px",
+  padding: "8px 15px",
   fontWeight: 600,
   boxShadow: "0 4px 10px rgba(52, 152, 219, 0.3)",
   transition: "all 0.3s ease",
@@ -119,10 +119,10 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
 }))
 
 const categories = [
-  { id: 1, name: "Queijos", image: "/placeholder.svg?height=200&width=300", url: "/products/category1" },
-  { id: 2, name: "Laticínios", image: "/placeholder.svg?height=200&width=300", url: "/products/category2" },
-  { id: 3, name: "Embutidos", image: "/placeholder.svg?height=200&width=300", url: "/products/category3" },
-  { id: 4, name: "Congelados", image: "/placeholder.svg?height=200&width=300", url: "/products/category4" },
+  { id: 1, name: "Crioulo", image: "/item1.png?height=200&width=300", url: "/placeholder" },
+  { id: 2, name: "Polenghi", image: "/item2.png?height=200&width=300", url: "/placeholder" },
+  { id: 3, name: "Gomes da Costa", image: "/item3.png?height=200&width=300", url: "/placeholder" },
+  { id: 4, name: "Seara", image: "/item4.png?height=200&width=300", url: "/placeholder" },
 ]
 
 export default function FeaturedCategories() {
@@ -141,7 +141,7 @@ export default function FeaturedCategories() {
     >
       <Box sx={{ maxWidth: 1200, width: "100%" }}>
         <SectionTitle variant="h4">
-          <CategoryIcon /> Categorias em Destaque
+          <CategoryIcon /> Marcas em Destaque
         </SectionTitle>
 
         <Grid container spacing={3}>

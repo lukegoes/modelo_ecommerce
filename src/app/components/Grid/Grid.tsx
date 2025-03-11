@@ -144,7 +144,7 @@ const Price = styled(Typography)({
 const products = [
   {
     id: 1,
-    name: "Capeletti de Queijo",
+    name: "Capeletti Queijo",
     brand: "Massa Leve",
     peso: "400g",
     image: "/destaque1.png?height=150&width=150",
