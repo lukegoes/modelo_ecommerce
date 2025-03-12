@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Ecommerce Rei Distribuidora  
 
-## Getting Started
+Acesse aqui: https://ecommerce-rei-rust.vercel.app/
 
-First, run the development server:
+## 📌 Sobre o Projeto  
+Este projeto é uma modernização do site da Rei Distribuidora, empresa onde estou trabalhando no momento, trazendo um design mais interativo e atualizado. O objetivo é oferecer uma experiência mais fluida e dinâmica para os usuários, melhorando a navegação e a usabilidade.  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tecnologias Utilizadas  
+- **React.js** – Framework JavaScript para construção da interface  
+- **Next.js** – Framework para React com renderização server-side  
+- **Swiper.js** – Biblioteca para carrosséis interativos  
+- **MUI (Material UI)** – Componentes estilizados para um design moderno  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Funcionalidades  
+- Design interativo e responsivo  
+- Botão do carrinho dinâmico (atualiza conforme a quantidade de itens)  
+- Navegação fluida e moderna  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📌 **Funcionalidades futuras:**  
+- Sistema de compras e checkout  
+- Cadastro e login de usuários  
+- Integração com métodos de pagamento  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📌 Contribuições  
+Atualmente, este projeto está sendo desenvolvido individualmente, mas melhorias e sugestões são bem-vindas!  
