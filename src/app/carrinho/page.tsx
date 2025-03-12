@@ -12,7 +12,6 @@ import {
   Grid,
   Button,
   IconButton,
-  TextField,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -334,6 +333,10 @@ export default function CartPage() {
   const [cepValue, setCepValue] = useState("")
   const [isMounted, setIsMounted] = useState(false)
 
+  const handleCepSubmit = () => {
+    alert(`CEP digitado: ${cepValue}`);
+  };
+
   useEffect(() => {
     setIsMounted(true)
     return () => setIsMounted(false)
@@ -416,7 +419,7 @@ export default function CartPage() {
       </ContinueShoppingButton>
 
       <PageTitle variant="h4">
-        <ShoppingCartIcon /> Meu Carrinho ({totalItems} {totalItems === 1 ? "item" : "itens"})
+        <ShoppingCartIcon /> Meu Carrinho •{totalItems} {totalItems === 1 ? "item" : "itens"}
       </PageTitle>
 
       <Grid container spacing={4}>
@@ -489,35 +492,32 @@ export default function CartPage() {
               <Typography variant="body2" fontWeight={600} mb={1}>
                 Calcular Frete
               </Typography>
-              <TextField
-                placeholder="Digite seu CEP"
-                variant="outlined"
-                fullWidth
-                size="small"
-                value={cepValue}
-                onChange={handleCepChange}
-                InputProps={{
-                  endAdornment: (
-                    <Button
-                      size="small"
-                      sx={{
-                        color: "var(--accent)",
-                        whiteSpace: "nowrap",
-                        minWidth: 0,
-                      }}
-                    >
-                      Calcular
-                    </Button>
-                  ),
-                }}
+              <div className="cep-container">
+              <input 
+                id="cep-input"
+                type="text" 
+                autoComplete="off"
+                placeholder="Digite seu CEP" 
+                value={cepValue} 
+                onChange={handleCepChange} 
+                className="cep-input"
               />
+              <button 
+                onClick={handleCepSubmit} 
+                className="cep-button"
+              >
+                OK
+              </button>
+            </div>
+
+
             </ShippingInputContainer>
 
             {isFreeShipping ? (
               <ShippingInfo>
                 <LocalShippingIcon />
                 <Typography variant="body2">
-                  <b>Frete grátis</b> para compras acima de R$ 150,00
+                  <b>Você atingiu o valor mínimo <br/> para frete grátis!</b>
                 </Typography>
               </ShippingInfo>
             ) : (
