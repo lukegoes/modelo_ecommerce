@@ -18,7 +18,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  ButtonProps,
+  type ButtonProps,
 } from "@mui/material"
 import Image from "next/image"
 import Link from "next/link"
@@ -62,7 +62,7 @@ const CartItem = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
   marginBottom: theme.spacing(2),
   borderRadius: 12,
-  position: "relative",  // Garante que o posicionamento absoluto funcione
+  position: "relative",
   transition: "transform 0.3s ease, box-shadow 0.3s ease",
   "&:hover": {
     transform: "translateY(-4px)",
@@ -71,6 +71,8 @@ const CartItem = styled(Paper)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",
     padding: theme.spacing(2),
+    alignItems: "center",
+    textAlign: "center",
   },
 }))
 
@@ -104,18 +106,21 @@ const ProductInfo = styled(Box)(({ theme }) => ({
 }))
 
 const ProductName = styled(Typography)({
+  fontFamily: "Poppins",
   fontWeight: 700,
   color: "var(--primary)",
   marginBottom: 4,
 })
 
 const ProductMeta = styled(Typography)({
-  color: "var(--text-muted)",
+  fontFamily: "Poppins",
+  color: "#9ea1a5",
   fontSize: "0.875rem",
   marginBottom: 8,
 })
 
 const ProductPrice = styled(Typography)({
+  fontFamily: "Poppins",
   fontWeight: 700,
   color: "var(--accent-dark)",
 })
@@ -124,20 +129,26 @@ const QuantityControls = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   backgroundColor: "var(--background-light)",
-  borderRadius: 20,
+  borderRadius: 30,
   width: "fit-content",
-  padding: "2px",
-  marginLeft: "auto",
+  padding: "4px",
+  border: "1px solid var(--border-color)",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: "auto",
+  },
   [theme.breakpoints.down("sm")]: {
     margin: "0 auto",
+    marginBottom: theme.spacing(2),
   },
 }))
 
 const QuantityButton = styled(IconButton)(({ theme }) => ({
   color: "var(--primary)",
   padding: theme.spacing(0.5),
-  backgroundColor: "transparent",
+  backgroundColor: "rgba(255, 255, 255, 0.5)",
   borderRadius: "50%",
+  minWidth: "30px",
+  height: "30px",
   transition: "all 0.2s ease",
   "&:hover": {
     backgroundColor: "var(--accent)",
@@ -145,35 +156,58 @@ const QuantityButton = styled(IconButton)(({ theme }) => ({
   },
 }))
 
-const QuantityInput = styled(TextField)({
-  width: 60,
-  "& .MuiInputBase-input": {
-    textAlign: "center",
-    fontWeight: 600,
-    padding: "4px 0",
-  },
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      border: "none",
-    },
-  },
-})
+const QuantityDisplay = styled('span')({
+  display: 'inline-block',
+  fontFamily: "Poppins",
+  width: '50px',
+  textAlign: 'center',
+  fontWeight: 600,
+  color: '#000',
+  padding: '4px 0',
+  fontSize: '1rem',
+});
 
-const DeleteButton = styled(IconButton)({
+
+const ActionsContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(2),
+  },
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    width: "100%",
+  },
+}))
+
+const PriceContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+  },
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: theme.spacing(2), 
+    marginTop: theme.spacing(2),
+  },
+}));
+
+const DeleteButton = styled(IconButton)(({ theme }) => ({
   color: "var(--text-muted)",
-  position: "absolute",
-  top: "50%",  // Centraliza verticalmente
-  right: 10,
-  transform: "translateY(-50%)",  // Corrige o desalinhamento vertical
   transition: "all 0.2s ease",
   "&:hover": {
     color: "var(--secondary)",
-    transform: "scale(1.1) translateY(-50%)",  // Garante que o ícone continue centralizado ao aumentar de tamanho
+    transform: "scale(1.1)",
   },
-})
+  [theme.breakpoints.down("sm")]: {
+    marginTop: theme.spacing(1),
+  },
+}))
 
 const CartSummary = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
+  fontFamily: "Poppins",
   borderRadius: 12,
   position: "sticky",
   top: 140,
@@ -186,8 +220,9 @@ const CartSummary = styled(Paper)(({ theme }) => ({
   },
 }))
 
-const SummaryTitle = styled(Typography)(({
+const SummaryTitle = styled(Typography)({
   fontWeight: 700,
+  fontFamily: "Poppins",
   color: "var(--primary)",
   marginBottom: 16,
   position: "relative",
@@ -201,8 +236,7 @@ const SummaryTitle = styled(Typography)(({
     height: 3,
     backgroundColor: "var(--accent)",
   },
-}))
-
+})
 
 const SummaryRow = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -213,6 +247,7 @@ const SummaryRow = styled(Box)(({ theme }) => ({
 const TotalRow = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
+  fontFamily: "Poppins",
   fontWeight: 700,
   fontSize: "1.2rem",
   color: "var(--primary)",
@@ -254,7 +289,6 @@ const ContinueShoppingButton = styled(Button)<ButtonProps & { component?: React.
   "& .MuiSvgIcon-root": {
     marginRight: theme.spacing(1),
   },
-  
 }))
 
 const EmptyCartContainer = styled(Box)(({ theme }) => ({
@@ -280,6 +314,7 @@ const ShippingInputContainer = styled(Box)(({ theme }) => ({
 
 const ShippingInfo = styled(Box)(({ theme }) => ({
   display: "flex",
+  fontFamily: "Poppins",
   alignItems: "center",
   marginTop: theme.spacing(1),
   marginBottom: theme.spacing(1),
@@ -304,11 +339,12 @@ export default function CartPage() {
     return () => setIsMounted(false)
   }, [])
 
-  // Shipping cost calculation - simplified for demonstration
   const shippingCost = items.length > 0 ? 15.9 : 0
   const freeShippingThreshold = 150
   const isFreeShipping = totalPrice >= freeShippingThreshold
   const finalShippingCost = isFreeShipping ? 0 : shippingCost
+
+  
 
   const handleCheckout = () => {
     setDialogOpen(true)
@@ -319,14 +355,12 @@ export default function CartPage() {
   }
 
   const confirmOrder = () => {
-    // In a real application, this would send order to a backend
     clearCart()
     setDialogOpen(false)
     alert("Pedido realizado com sucesso!")
   }
 
   const handleCepChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // Format CEP input as 00000-000
     let value = e.target.value.replace(/\D/g, "")
     if (value.length > 5) {
       value = value.substring(0, 5) + "-" + value.substring(5, 8)
@@ -403,37 +437,37 @@ export default function CartPage() {
                 </ProductPrice>
               </ProductInfo>
 
-              <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-end", ml: { xs: 0, sm: 2 } }}>
-                <QuantityControls>
-                  <QuantityButton size="small" onClick={() => updateQuantity(item.id, item.quantity - 1)}>
-                    <RemoveIcon fontSize="small" />
-                  </QuantityButton>
+              <ActionsContainer>
+              <QuantityControls>
+                <QuantityButton
+                  size="small"
+                  onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                  disabled={item.quantity <= 1}
+                >
+                  <RemoveIcon fontSize="small" />
+                </QuantityButton>
 
-                  <QuantityInput
-                    value={item.quantity}
-                    size="small"
-                    inputProps={{ min: 1, style: { textAlign: "center", color: "red" } }}
-                    onChange={(e) => {
-                      const value = Number.parseInt(e.target.value)
-                      if (!isNaN(value) && value > 0) {
-                        updateQuantity(item.id, value)
-                      }
-                    }}
-                  />
+                <QuantityDisplay>{item.quantity}</QuantityDisplay>
 
-                  <QuantityButton size="small" onClick={() => updateQuantity(item.id, item.quantity + 1)}>
-                    <AddIcon fontSize="small" />
-                  </QuantityButton>
-                </QuantityControls>
+                <QuantityButton
+                  size="small"
+                  onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  disabled={item.quantity >= 99} // Limita a 99
+                >
+                  <AddIcon fontSize="small" />
+                </QuantityButton>
+              </QuantityControls>
 
-                <Typography variant="subtitle1" sx={{ fontWeight: 700, mt: 2, color: "var(--accent-dark)" }}>
-                  {(item.price * item.quantity).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
-                </Typography>
-              </Box>
+                <PriceContainer>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: "var(--accent-dark)" }}>
+                    {(item.price * item.quantity).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+                  </Typography>
+                </PriceContainer>
 
-              <DeleteButton onClick={() => removeItem(item.id)}>
-                <DeleteOutlineIcon />
-              </DeleteButton>
+                <DeleteButton onClick={() => removeItem(item.id)} aria-label="Remover item">
+                  <DeleteOutlineIcon />
+                </DeleteButton>
+              </ActionsContainer>
             </CartItem>
           ))}
         </Grid>
@@ -539,18 +573,18 @@ export default function CartPage() {
             },
           }}
         >
-          <DialogTitle>Confirmar Pedido</DialogTitle>
+          <DialogTitle sx={{ fontFamily: 'Poppins, sans-serif' }}>Confirmar Pedido</DialogTitle>
           <DialogContent>
-            <DialogContentText>
+            <DialogContentText sx={{ fontFamily: 'Poppins, sans-serif' }}>
               Esta é uma demonstração. Em um site real, você seria direcionado para uma página de checkout segura para
               concluir seu pedido.
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleCloseDialog} color="primary">
+            <Button onClick={handleCloseDialog} color="primary" sx={{fontFamily: 'Poppins, sans-serif'}} >
               Cancelar
             </Button>
-            <Button onClick={confirmOrder} variant="contained" sx={{ bgcolor: "var(--accent)" }}>
+            <Button onClick={confirmOrder} variant="contained" sx={{ bgcolor: "var(--accent)", fontFamily: 'Poppins, sans-serif' }}>
               Confirmar Pedido
             </Button>
           </DialogActions>
