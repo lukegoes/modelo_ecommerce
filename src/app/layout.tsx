@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google"
 import "./styles.css"
 import Navbar from "./components/Navbar"
 import { CartProvider } from "./providers/cart-provider"
+import { Analytics } from "@vercel/analytics/react"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navbar />
           <main style={{ paddingTop: "120px" }}>{children}</main>
         </CartProvider>
+        <Analytics />
       </body>
     </html>
   )
