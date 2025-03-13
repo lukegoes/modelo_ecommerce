@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, Autoplay } from "swiper/modules"
+import { Pagination, Autoplay, Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
 import "./style.css"
@@ -9,13 +9,18 @@ const CardSlider = () => {
     <main>
       <div className="container">
         <Swiper
-          modules={[Pagination, Autoplay]}
+          modules={[Pagination, Autoplay, Navigation]}
           initialSlide={0}
           centeredSlides={true}
           slidesPerView={1}
           speed={800}
+          loop={true}
           slideToClickedSlide={true}
           pagination={{ el: ".swiper-pagination", clickable: true }}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
           autoplay={{
             delay: 4000,
             disableOnInteraction: false,
@@ -49,6 +54,13 @@ const CardSlider = () => {
           ></SwiperSlide>
 
           <div className="swiper-pagination"></div>
+          
+          <div className="swiper-button-prev">
+            <span className="swiper-button-prev-icon"></span>
+          </div>
+          <div className="swiper-button-next">
+            <span className="swiper-button-next-icon"></span>
+          </div>
         </Swiper>
       </div>
     </main>
