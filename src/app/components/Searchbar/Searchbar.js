@@ -14,7 +14,7 @@ function Searchbar() {
   }
 
   const handleSearch = () => {
-    // Implement search functionality here
+    // Criar a função de busca aqui
     console.log("Searching for:", value)
   }
 

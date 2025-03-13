@@ -26,8 +26,6 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
-
-  // Initialize from localStorage on client side
   useEffect(() => {
     const storedCart = localStorage.getItem("cart")
     if (storedCart) {
@@ -40,7 +38,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, [])
 
-  // Save to localStorage when cart changes
+  // Usar armazenamento local para salvar as mudanças no carrinho
   useEffect(() => {
     if (items.length > 0) {
       localStorage.setItem("cart", JSON.stringify(items))

@@ -1,5 +1,5 @@
 .search {
-  width: 521px; /* Mantendo o tamanho original */
+  width: 521px;
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -45,9 +45,6 @@
 }
 
 
-/* Material UI */
-
-
 .MuiOutlinedInput-root.Mui-focused {
   border-color: transparent !important;
 }
@@ -58,7 +55,7 @@
 
 .MuiOutlinedInput-input {
   color: var(--text-light) !important;
-  padding-right: 50px !important; /* Evita sobreposição do texto no botão */
+  padding-right: 50px !important;
 }
 
 .MuiOutlinedInput-root:hover fieldset {

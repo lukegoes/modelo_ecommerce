@@ -30,7 +30,6 @@
     color: var(--accent);
   }
   
-  /* Submenu styling */
   .submenu {
     position: absolute;
     top: 100%;

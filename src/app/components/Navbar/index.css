@@ -131,7 +131,6 @@ header {
     transform: rotate(180deg);
   }
   
-  /* Departments submenu */
   .departments-container {
     position: relative;
   }
@@ -176,7 +175,6 @@ header {
     padding-left: 20px;
   }
   
-  /* Submenu styling */
   .submenu {
     position: absolute;
     top: 100%;
@@ -217,7 +215,6 @@ header {
     padding-left: 20px;
   }
   
-  /* Responsive cart button */
   .cart-button {
     position: relative;
   }

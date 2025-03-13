@@ -58,9 +58,9 @@ const FooterTitle = styled(Typography)(({
 
 const ContactItem = styled(Box)(({
   display: "flex",
-  alignItems: "center", // Align icons and text horizontally
+  alignItems: "center", 
   marginBottom: 12,
-  textAlign: "left", // Ensures text aligns to the left
+  textAlign: "left",
   "& svg": {
     marginRight: 10,
     marginTop: 4,
