@@ -12,8 +12,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Rei Distribuidora",
-  description: "Distribuidora de alimentos de qualidade para toda a região",
+  title: "Empresa Fictícia",
+  description: "Distribuidora de alimentos",
   icons: [{ rel: "icon", url: "Favicon.ico" }],
 }
 

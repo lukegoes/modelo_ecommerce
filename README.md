@@ -1,9 +1,10 @@
-# 🛒 Ecommerce Rei Distribuidora  
+# 🛒 Site Ecommerce  
 
 Acesse aqui: https://ecommerce-rei-rust.vercel.app/
 
 ## 📌 Sobre o Projeto  
-Este projeto é uma modernização do site da Rei Distribuidora, empresa onde estou trabalhando no momento, trazendo um design mais interativo e atualizado. O objetivo é oferecer uma experiência mais fluida e dinâmica para os usuários, melhorando a navegação e a usabilidade.  
+Este projeto é um modelo de site e-commerce com um design interativo e moderno.
+O objetivo é oferecer uma experiência fluida e dinâmica para os usuários, melhorando a navegação e a usabilidade.  
 
 ## 🚀 Tecnologias Utilizadas  
 - **React.js** – Framework JavaScript para construção da interface  

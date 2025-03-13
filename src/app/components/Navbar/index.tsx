@@ -40,7 +40,7 @@ export default function Navbar() {
   const productCategories: NavItemInterface[] = [
     {
       url: "/placeholder",
-      label: "Linha Cambuquira",
+      label: "Panificação",
     },
     {
       url: "/placeholder",

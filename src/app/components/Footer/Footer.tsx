@@ -134,10 +134,10 @@ export default function Footer() {
         <Grid container spacing={30}>
           <Grid size= {{xs:12, sm:6}}>
             <LogoContainer>
-              <Image src="/logo.png" alt="Rei Distribuidora" width={120} height={100} />
+              <Image src="/logo.png" alt="logo" width={120} height={120} />
             </LogoContainer>
             <Typography variant="body2" sx={{ color: "var(--text-muted)", mb: 3 }}>
-              Há mais de 25 anos a Rei Distribuidora vem servindo seus clientes com profissionalismo e credibilidade.
+              Há mais de 25 anos servindo os clientes com profissionalismo e credibilidade.
             </Typography>
 
             <PaymentMethodsContainer>
@@ -165,27 +165,27 @@ export default function Footer() {
             <ContactItem>
               <LocationOnIcon fontSize="small" />
               <Typography variant="body2" sx={{ color: "var(--text-muted)" }}>
-                Rua da Cevada, 115
+                Rua, 123
                 <br />
-                Penha Circular - RJ, 21011-080
+                Lugar Nenhum, 12345-678
               </Typography>
             </ContactItem>
             <ContactItem>
               <PhoneIcon fontSize="small" />
               <Typography variant="body2" sx={{ color: "var(--text-muted)" }}>
-                (21) 3889-6090
+                (00) 1234-5678
               </Typography>
             </ContactItem>
             <ContactItem>
               <WhatsAppIcon fontSize="small" />
               <Typography variant="body2" sx={{ color: "var(--text-muted)" }}>
-                (21) 97471-8717
+                (00) 12345-6789
               </Typography>
             </ContactItem>
             <ContactItem>
               <EmailIcon fontSize="small" />
               <Typography variant="body2" sx={{ color: "var(--text-muted)" }}>
-                contato@reidistribuidora.com.br
+                contato@contato.com.br
               </Typography>
             </ContactItem>
             <Box>
@@ -199,7 +199,7 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        <Copyright>© {new Date().getFullYear()} Rei Distribuidora. Todos os direitos reservados.</Copyright>
+        <Copyright>© {new Date().getFullYear()} Desenvolvido por Lucas Goes Lima. Todos os direitos reservados.</Copyright>
       </FooterContent>
     </FooterContainer>
   )
