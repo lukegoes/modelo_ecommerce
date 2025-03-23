@@ -1,6 +1,6 @@
 # 🛒 Site Ecommerce  
 
-Acesse aqui: https://ecommerce-rei-rust.vercel.app/
+Acesse aqui: https://modeloecommerce.vercel.app
 
 ## 📌 Sobre o Projeto  
 Este projeto é um modelo de site e-commerce com um design interativo e moderno.
