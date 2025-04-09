@@ -419,7 +419,7 @@ export default function CartPage() {
       </ContinueShoppingButton>
 
       <PageTitle variant="h4">
-        <ShoppingCartIcon /> Meu Carrinho •{totalItems} {totalItems === 1 ? "item" : "itens"}
+        <ShoppingCartIcon /> Meu Carrinho • {totalItems} {totalItems === 1 ? "item" : "itens"}
       </PageTitle>
 
       <Grid container spacing={4}>

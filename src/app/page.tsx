@@ -6,10 +6,13 @@ import NewArrivalsGrid from "./components/NewArrivals/NewArrivals"
 import FeaturedCategories from "./components/FeaturedCategories/FeaturedCategories"
 import Newsletter from "./components/Newsletter/Newsletter"
 import Footer from "./components/Footer/Footer"
+import MyChatBot from "./components/MyChatBot/MyChatBot"
+
 
 export default function Home() {
   return (
     <div>
+      <MyChatBot />
       <CardSlider />
       <BestSellersGrid />
       <NewArrivalsGrid />

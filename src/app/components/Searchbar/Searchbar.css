@@ -6,6 +6,7 @@
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 24px;
   padding: 2px;
+  position: relative;
 }
 
 .search input {
@@ -34,7 +35,7 @@
   align-items: center;
   justify-content: center;
   background-color: #e74c3c;
-  border-radius: 50%; 
+  border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -43,7 +44,6 @@
   color: var(--text-light);
   font-size: 20px;
 }
-
 
 .MuiOutlinedInput-root.Mui-focused {
   border-color: transparent !important;
@@ -61,3 +61,129 @@
 .MuiOutlinedInput-root:hover fieldset {
   border-color: transparent !important;
 }
+
+/* Estilos para o dropdown de sugestões */
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.suggestion-item:hover,
+.suggestion-item:focus {
+  background-color: rgba(52, 152, 219, 0.05);
+  outline: none;
+}
+
+.suggestion-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f5f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suggestion-content {
+  flex: 1;
+}
+
+.suggestion-name {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.suggestion-info {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.suggestion-price {
+  color: var(--accent-dark);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.suggestion-footer {
+  padding: 12px 16px;
+  background-color: #f5f7fa;
+  text-align: center;
+}
+
+.view-all-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.view-all-link:hover {
+  color: var(--accent-dark);
+}
+
+.highlight {
+  background-color: rgba(52, 152, 219, 0.15);
+  font-weight: 700;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Responsividade para o dropdown */
+@media (max-width: 768px) {
+  .suggestions-dropdown {
+    position: fixed;
+    top: auto;
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+}
+

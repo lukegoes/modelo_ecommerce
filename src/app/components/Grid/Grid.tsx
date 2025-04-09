@@ -8,7 +8,8 @@ import Paper from "@mui/material/Paper"
 import Grid from "@mui/material/Grid2"
 import Button from "@mui/material/Button"
 import Image from "next/image"
-import { Typography, Alert } from "@mui/material"
+import Link from "next/link"
+import { Typography, Alert, Skeleton } from "@mui/material"
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import { useEffect, useState } from "react"
@@ -188,6 +189,16 @@ export default function BestSellersGrid() {
   const { addItem } = useCart()
   const [openSnackbar, setOpenSnackbar] = useState(false)
   const [addedProduct, setAddedProduct] = useState("")
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // Simular carregamento de dados
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
     if (openSnackbar) {
@@ -230,36 +241,52 @@ export default function BestSellersGrid() {
         </SectionTitle>
 
         <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid size={{xs:12, sm:6, md:4, lg:2.4}} key={product.id}>
-              <Item elevation={2}>
-                <ImageWrapper>
-                  <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.name}
-                    width={150}
-                    height={150}
-                    style={{ objectFit: "contain" }}
-                  />
-                </ImageWrapper>
-                <ProductName variant="h6">{product.name}</ProductName>
-                <ProductInfo variant="subtitle2">
-                  {product.brand} • {product.peso}
-                </ProductInfo>
-                <Price variant="h6">
-                  {product.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
-                </Price>
-                <StyledButton
-                  variant="contained"
-                  startIcon={<ShoppingCartIcon />}
-                  disableElevation
-                  onClick={() => handleAddToCart(product)}
-                >
-                  Adicionar
-                </StyledButton>
-              </Item>
-            </Grid>
-          ))}
+          {loading
+            ? // Esqueletos de carregamento
+              Array.from(new Array(5)).map((_, index) => (
+                <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }} key={`skeleton-${index}`}>
+                  <Item elevation={2}>
+                    <Skeleton variant="rectangular" width="100%" height={150} sx={{ borderRadius: 2, mb: 2 }} />
+                    <Skeleton variant="text" width="80%" height={30} sx={{ mx: "auto" }} />
+                    <Skeleton variant="text" width="60%" height={20} sx={{ mx: "auto", mb: 1 }} />
+                    <Skeleton variant="text" width="40%" height={30} sx={{ mx: "auto", mb: 1 }} />
+                    <Skeleton variant="rectangular" width="80%" height={40} sx={{ mx: "auto", borderRadius: 4 }} />
+                  </Item>
+                </Grid>
+              ))
+            : // Produtos reais
+              products.map((product) => (
+                <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }} key={product.id}>
+                  <Item elevation={2}>
+                    <Link href={`/produto/${product.id}`} style={{ textDecoration: "none" }}>
+                      <ImageWrapper>
+                        <Image
+                          src={product.image || "/placeholder.svg"}
+                          alt={product.name}
+                          width={150}
+                          height={150}
+                          style={{ objectFit: "contain" }}
+                        />
+                      </ImageWrapper>
+                      <ProductName variant="h6">{product.name}</ProductName>
+                      <ProductInfo variant="subtitle2">
+                        {product.brand} • {product.peso}
+                      </ProductInfo>
+                      <Price variant="h6">
+                        {product.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+                      </Price>
+                    </Link>
+                    <StyledButton
+                      variant="contained"
+                      startIcon={<ShoppingCartIcon />}
+                      disableElevation
+                      onClick={() => handleAddToCart(product)}
+                    >
+                      Adicionar
+                    </StyledButton>
+                  </Item>
+                </Grid>
+              ))}
         </Grid>
       </Box>
 

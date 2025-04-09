@@ -12,10 +12,13 @@ import { FaHeadset } from "react-icons/fa"
 import { IoCartOutline } from "react-icons/io5"
 import { FaThList, FaAngleDown } from "react-icons/fa"
 import { useCart } from "../../providers/cart-provider"
+import { Dialog, DialogContent } from "@mui/material"
+import { IoSearchOutline } from "react-icons/io5"
 
 export default function Navbar() {
   const { totalItems } = useCart()
   const [showDepartments, setShowDepartments] = useState(false)
+  const [searchDialogOpen, setSearchDialogOpen] = useState(false)
 
   const items: NavItemInterface[] = [
     {
@@ -78,6 +81,10 @@ export default function Navbar() {
     setShowDepartments(!showDepartments)
   }
 
+  const toggleSearchDialog = () => {
+    setSearchDialogOpen(!searchDialogOpen)
+  }
+
   return (
     <header>
       <nav className="navbar">
@@ -86,7 +93,13 @@ export default function Navbar() {
             <Image src="/logo.png" alt="logo" width={100} height={100} />
           </Link>
 
-          <Searchbar />
+          <div className="desktop-search">
+            <Searchbar />
+          </div>
+
+          <div className="mobile-search-icon" onClick={toggleSearchDialog}>
+            <IoSearchOutline />
+          </div>
 
           <ul className="nav-items">
             {items.map((item, index) => (
@@ -139,6 +152,22 @@ export default function Navbar() {
             ))}
           </ul>
         </div>
+        <Dialog
+          open={searchDialogOpen}
+          onClose={toggleSearchDialog}
+          fullWidth
+          maxWidth="sm"
+          sx={{
+            "& .MuiDialog-paper": {
+              borderRadius: "12px",
+              padding: "10px",
+            },
+          }}
+        >
+          <DialogContent sx={{ p: 2 }}>
+            <Searchbar />
+          </DialogContent>
+        </Dialog>
       </nav>
     </header>
   )

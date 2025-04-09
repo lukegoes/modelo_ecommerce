@@ -12,12 +12,14 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@google/generative-ai": "^0.24.0",
     "@mui/icons-material": "^6.4.7",
     "@mui/material": "^6.4.7",
     "@vercel/analytics": "^1.5.0",
     "gsap": "^3.12.7",
     "next": "15.1.7",
     "react": "^19.0.0",
+    "react-chatbotify": "^2.0.0-beta.32",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "swiper": "^11.2.4"
