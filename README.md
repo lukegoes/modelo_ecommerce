@@ -1,6 +1,10 @@
 # 🛒 Site Ecommerce  
 
+<<<<<<< HEAD
 Acesse aqui: https://modeloecommerce.vercel.app/
+=======
+Acesse aqui: https://modeloecommerce.vercel.app
+>>>>>>> 7678c4a314d6e33cde19261914fe7ecf0c1e7b11
 
 ## 📌 Sobre o Projeto  
 Este projeto é um modelo de site e-commerce com um design interativo e moderno.
