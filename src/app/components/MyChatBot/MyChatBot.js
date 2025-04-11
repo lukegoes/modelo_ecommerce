@@ -1,3 +1,5 @@
+"use client";
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import ChatBot from "react-chatbotify";
 import ChatIcon from '@mui/icons-material/Chat';

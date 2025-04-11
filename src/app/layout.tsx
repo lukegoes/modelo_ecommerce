@@ -5,6 +5,8 @@ import "./styles.css"
 import Navbar from "./components/Navbar"
 import { CartProvider } from "./providers/cart-provider"
 import { Analytics } from "@vercel/analytics/react"
+import MyChatBot from "./components/MyChatBot/MyChatBot"
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,6 +30,7 @@ export default function RootLayout({
         <CartProvider>
           <Navbar />
           <main style={{ paddingTop: "120px" }}>{children}</main>
+          <MyChatBot />
         </CartProvider>
         <Analytics />
       </body>
