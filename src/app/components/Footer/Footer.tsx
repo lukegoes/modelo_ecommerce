@@ -134,7 +134,7 @@ export default function Footer() {
         <Grid container spacing={30}>
           <Grid size= {{xs:12, sm:6}}>
             <LogoContainer>
-              <Image src="/logo.png" alt="logo" width={120} height={120} />
+              <Image src="/logo.png" alt="logo" width={50} height={50} />
             </LogoContainer>
             <Typography variant="body2" sx={{ color: "var(--text-muted)", mb: 3 }}>
               Há mais de 25 anos servindo os clientes com profissionalismo e credibilidade.

@@ -90,7 +90,16 @@ export default function Navbar() {
       <nav className="navbar">
         <div className="navbar-main">
           <Link href="/" className="logo">
-            <Image src="/logo.png" alt="logo" width={100} height={100} />
+          <div style={{
+      width: 100,
+      height: 100,
+      position: 'relative',
+      display: 'flex',
+      justifyContent: 'center',
+     alignItems: 'center'
+     }}>
+            <Image src="/logo.png" alt="logo"  width={55} height={55} style={{ width: '55px', height: '55px' }}/>
+          </div>
           </Link>
 
           <div className="desktop-search">
