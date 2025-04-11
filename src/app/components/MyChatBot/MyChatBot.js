@@ -5,7 +5,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff';
 
 const MyChatBot = () => {
-  const genAI = new GoogleGenerativeAI("AIzaSyByV4XuYl96aHP234HLv3kVBZdfb0PvZ-Q"); 
+  const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_API_KEY); 
 
   const productInfo = `
   Nossos produtos:
