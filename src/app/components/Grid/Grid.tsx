@@ -195,7 +195,7 @@ export default function BestSellersGrid() {
     // Simular carregamento de dados
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 1000)
+    }, 500)
 
     return () => clearTimeout(timer)
   }, [])
@@ -235,7 +235,7 @@ export default function BestSellersGrid() {
         backgroundColor: "var(--background-light)",
       }}
     >
-      <Box sx={{ maxWidth: 1200, width: "100%" }}>
+      <Box sx={{ maxWidth: 1400, width: "100%" }}>
         <SectionTitle variant="h4">
           <LocalFireDepartmentIcon /> Produtos Mais Vendidos
         </SectionTitle>
@@ -258,7 +258,7 @@ export default function BestSellersGrid() {
               products.map((product) => (
                 <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }} key={product.id}>
                   <Item elevation={2}>
-                    <Link href={`/produto/${product.id}`} style={{ textDecoration: "none" }}>
+                    <Link href="#" style={{ textDecoration: "none" }}>
                       <ImageWrapper>
                         <Image
                           src={product.image || "/placeholder.svg"}

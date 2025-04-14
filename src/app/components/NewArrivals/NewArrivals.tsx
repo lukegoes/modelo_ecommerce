@@ -248,7 +248,7 @@ export default function NewArrivalsGrid() {
         backgroundColor: "var(--background-white)",
       }}
     >
-      <Box sx={{ maxWidth: 1200, width: "100%" }}>
+      <Box sx={{ maxWidth: 1400, width: "100%" }}>
         <SectionTitle variant="h4">
           <AutoAwesomeIcon /> Novidades
         </SectionTitle>

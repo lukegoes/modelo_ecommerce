@@ -1,10 +1,8 @@
 import { styled } from "@mui/material/styles"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid2"
-import { Typography, IconButton } from "@mui/material"
+import { Typography } from "@mui/material"
 import Image from "next/image"
-import FacebookIcon from "@mui/icons-material/Facebook"
-import InstagramIcon from "@mui/icons-material/Instagram"
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import PhoneIcon from "@mui/icons-material/Phone"
@@ -30,7 +28,7 @@ const FooterContainer = styled(Box)(({ theme }) => ({
 }))
 
 const FooterContent = styled(Box)(({
-  maxWidth: 1200,
+  maxWidth: 1400,
   margin: "0 auto",
   padding: "0 16px",
 }))
@@ -72,18 +70,6 @@ const ContactItem = styled(Box)(({
   },
 }))
 
-const SocialIconButton = styled(IconButton)(({
-  color: "var(--text-light)",
-  backgroundColor: "var(--primary-light)",
-  marginRight: 8,
-  transition: "all 0.3s ease",
-  "&:hover": {
-    backgroundColor: "var(--accent)",
-    color: "var(--text-light)",
-    transform: "translateY(-4px)",
-    boxShadow: "0 5px 12px rgba(52, 152, 219, 0.4)",
-  },
-}))
 
 const PaymentMethodsContainer = styled(Box)(({
   display: "flex",
@@ -136,26 +122,26 @@ export default function Footer() {
             <LogoContainer>
               <Image src="/logo.png" alt="logo" width={50} height={50} />
             </LogoContainer>
-            <Typography variant="body2" sx={{ color: "var(--text-muted)", mb: 3 }}>
+            <Typography variant="body1" sx={{ color: "var(--text-muted)", mb: 3 }}>
               Há mais de 25 anos servindo os clientes com profissionalismo e credibilidade.
             </Typography>
 
             <PaymentMethodsContainer>
               <PaymentMethod>
                 <CreditCardIcon fontSize="small" />
-                <Typography variant="caption">Visa</Typography>
+                <Typography variant="subtitle1" sx={{ color: "#fff" }}>Visa</Typography>
               </PaymentMethod>
               <PaymentMethod>
                 <CreditCardIcon fontSize="small" />
-                <Typography variant="caption">Mastercard</Typography>
+                <Typography variant="subtitle1" sx={{ color: "#fff" }}>Mastercard</Typography>
               </PaymentMethod>
               <PaymentMethod>
                 <ReceiptIcon fontSize="small" />
-                <Typography variant="caption">Boleto</Typography>
+                <Typography variant="subtitle1" sx={{ color: "#fff" }}>Boleto</Typography>
               </PaymentMethod>
               <PaymentMethod>
                 <PixIcon fontSize="small" />
-                <Typography variant="caption">Pix</Typography>
+                <Typography variant="subtitle1" sx={{ color: "#fff" }}>Pix</Typography>
               </PaymentMethod>
             </PaymentMethodsContainer>
           </Grid>
@@ -163,39 +149,31 @@ export default function Footer() {
           <Grid size={{ xs:12, sm:6}}>
             <FooterTitle variant="h6">Contato</FooterTitle>
             <ContactItem>
-              <LocationOnIcon fontSize="small" />
-              <Typography variant="body2" sx={{ color: "var(--text-muted)" }}>
-                Rua, 123
+              <LocationOnIcon fontSize="medium" />
+              <Typography variant="body1" sx={{ color: "var(--text-muted)" }}>
+                Rua dos números, 123
                 <br />
                 Lugar Nenhum, 12345-678
               </Typography>
             </ContactItem>
             <ContactItem>
-              <PhoneIcon fontSize="small" />
-              <Typography variant="body2" sx={{ color: "var(--text-muted)" }}>
+              <PhoneIcon fontSize="medium" />
+              <Typography variant="body1" sx={{ color: "var(--text-muted)" }}>
                 (00) 1234-5678
               </Typography>
             </ContactItem>
             <ContactItem>
-              <WhatsAppIcon fontSize="small" />
-              <Typography variant="body2" sx={{ color: "var(--text-muted)" }}>
+              <WhatsAppIcon fontSize="medium" />
+              <Typography variant="body1" sx={{ color: "var(--text-muted)" }}>
                 (00) 12345-6789
               </Typography>
             </ContactItem>
             <ContactItem>
-              <EmailIcon fontSize="small" />
-              <Typography variant="body2" sx={{ color: "var(--text-muted)" }}>
+              <EmailIcon fontSize="medium" />
+              <Typography variant="body1" sx={{ color: "var(--text-muted)" }}>
                 contato@contato.com.br
               </Typography>
             </ContactItem>
-            <Box>
-              <SocialIconButton size="small">
-                <FacebookIcon fontSize="small" />
-              </SocialIconButton>
-              <SocialIconButton size="small">
-                <InstagramIcon fontSize="small" />
-              </SocialIconButton>
-            </Box>
           </Grid>
         </Grid>
 

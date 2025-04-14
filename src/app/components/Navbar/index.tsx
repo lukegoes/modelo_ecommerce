@@ -71,7 +71,11 @@ export default function Navbar() {
     },
     {
       url: "/placeholder",
-      label: "Bebidas",
+      label: "Destilados",
+    },
+    {
+      url: "/placeholder",
+      label: "Vinhos",
     },
   ]
 
@@ -154,9 +158,12 @@ export default function Navbar() {
                 </div>
               )}
             </li>
-            {productCategories.slice(0, 7).map((item, index) => (
+            {productCategories.slice(0, 10).map((item, index) => (
               <li key={index}>
-                <NavItem url={item.url} label={item.label} icon={item.icon} isActive={pathname === item.url} />
+                <NavItem url={item.url}
+                label={item.label}
+                icon={item.icon}
+                isActive={pathname === item.url} />
               </li>
             ))}
           </ul>

@@ -152,7 +152,7 @@ export default function Newsletter() {
         backgroundColor: "var(--background-white)",
       }}
     >
-      <Box sx={{ maxWidth: 1200, width: "100%" }}>
+      <Box sx={{ maxWidth: 1400, width: "100%" }}>
         <NewsletterContainer elevation={0}>
           <TextContainer>
             <Title variant="h4">Receba nossas ofertas exclusivas</Title>
