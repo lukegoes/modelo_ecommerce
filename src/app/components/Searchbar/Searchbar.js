@@ -9,7 +9,6 @@ import InputAdornment from "@mui/material/InputAdornment"
 import Image from "next/image"
 import Link from "next/link"
 
-// Produtos simulados (em um projeto real, isso viria de uma API)
 const allProducts = [
   {
     id: 1,
@@ -111,8 +110,7 @@ function Searchbar() {
   const searchRef = useRef(null)
 
   useEffect(() => {
-    // Filtrar produtos com base no texto digitado
-    if (value.trim().length > 1) {
+    if (value.trim().length > 0) {
       const filteredProducts = allProducts
         .filter(
           (product) =>
@@ -120,7 +118,7 @@ function Searchbar() {
             product.brand.toLowerCase().includes(value.toLowerCase()) ||
             product.category.toLowerCase().includes(value.toLowerCase()),
         )
-        .slice(0, 5) // Limitar a 5 sugestões
+        .slice(0, 5)
 
       setSuggestions(filteredProducts)
       setShowSuggestions(true)
@@ -130,7 +128,6 @@ function Searchbar() {
     }
   }, [value])
 
-  // Fechar sugestões ao clicar fora
   useEffect(() => {
     function handleClickOutside(event) {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -162,7 +159,6 @@ function Searchbar() {
     } else if (e.key === "Escape") {
       setShowSuggestions(false)
     } else if (e.key === "ArrowDown" && showSuggestions && suggestions.length > 0) {
-      // Focar no primeiro item da lista
       document.getElementById("suggestion-0")?.focus()
     }
   }
@@ -175,7 +171,6 @@ function Searchbar() {
     } else if (e.key === "ArrowUp") {
       e.preventDefault()
       if (index === 0) {
-        // Voltar para o input
         document.getElementById("search-input")?.focus()
       } else {
         const prevIndex = index - 1
@@ -271,7 +266,8 @@ function Searchbar() {
               ))}
               <li className="suggestion-footer">
                 <Link
-                  href={`/busca?q=${encodeURIComponent(value.trim())}`}
+                  href="#"
+                  //href={`/busca?q=${encodeURIComponent(value.trim())}`}
                   className="view-all-link"
                   onClick={() => setShowSuggestions(false)}
                 >
